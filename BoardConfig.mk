@@ -1,5 +1,7 @@
 DEVICE_TREE := device/razer/aura
 
+RECOVERY_VARIANT := twrp
+
 ALLOW_MISSING_DEPENDENCIES = true
 
 # Bootloader
@@ -17,10 +19,10 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo
+TARGET_CPU_VARIANT := cortex-a75
 TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
