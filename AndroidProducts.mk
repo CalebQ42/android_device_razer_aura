@@ -1,1 +1,1 @@
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_aura.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/lineage_aura.mk
