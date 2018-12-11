@@ -2,7 +2,7 @@ DEVICE_TREE := device/razer/aura
 
 RECOVERY_VARIANT := twrp
 
-# ALLOW_MISSING_DEPENDENCIES = true
+ALLOW_MISSING_DEPENDENCIES = true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
