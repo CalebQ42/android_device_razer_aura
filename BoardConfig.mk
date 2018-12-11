@@ -2,7 +2,7 @@ DEVICE_TREE := device/razer/aura
 
 RECOVERY_VARIANT := twrp
 
-ALLOW_MISSING_DEPENDENCIES = true
+# ALLOW_MISSING_DEPENDENCIES = true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -32,7 +32,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a75
 
 # Kernel
-#TARGET_KERNEL_SOURCE := kernel/razer/msm8998
+# TARGET_KERNEL_SOURCE := kernel/razer/sdm845
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := cheryl2-perf_defconfig
