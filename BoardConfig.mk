@@ -1,8 +1,8 @@
-DEVICE_TREE := device/razer/aura
+DEVICE_TREE := device/razer/cheryl2
 
 RECOVERY_VARIANT := twrp
 
-# ALLOW_MISSING_DEPENDENCIES = true
+ALLOW_MISSING_DEPENDENCIES = true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -22,17 +22,17 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a75
+TARGET_CPU_VARIANT := kryo300
 TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a75
+TARGET_2ND_CPU_VARIANT := kryo
 
 # Kernel
-# TARGET_KERNEL_SOURCE := kernel/razer/sdm845
+TARGET_KERNEL_SOURCE := kernel/razer/sdm845
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := cheryl2-perf_defconfig
@@ -87,6 +87,7 @@ TW_NO_EXFAT_FUSE := true
 # Encryption support
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 #TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Asian region languages
