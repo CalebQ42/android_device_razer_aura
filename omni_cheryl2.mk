@@ -11,6 +11,10 @@ PRODUCT_PACKAGES += \
 	charger_res_images \
 	charger
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_MODEL="Phone 2" \
+    TARGET_DEVICE="aura"
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cheryl2
 PRODUCT_MODEL := Phone
