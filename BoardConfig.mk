@@ -32,7 +32,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := kryo
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/razer/sdm845
+#TARGET_KERNEL_SOURCE := kernel/razer/sdm845
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := cheryl2-perf_defconfig
