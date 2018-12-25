@@ -11,13 +11,9 @@ PRODUCT_PACKAGES += \
 	charger_res_images \
 	charger
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_MODEL="Phone 2" \
-    TARGET_DEVICE="aura"
-
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cheryl2
-PRODUCT_MODEL := Phone
-PRODUCT_NAME := omni_cheryl2
+PRODUCT_DEVICE := aura
+PRODUCT_MODEL := Phone 2
+PRODUCT_NAME := omni_aura
 PRODUCT_BRAND := razer
 PRODUCT_MANUFACTURER := razer
