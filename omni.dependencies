@@ -15,6 +15,5 @@
     "remote": "CalebQ42",
     "repository": "android_kernel_razer_sdm845",
     "target_path": "kernel/razer/sdm845"
-    "revision": "master"
   }
 ]
