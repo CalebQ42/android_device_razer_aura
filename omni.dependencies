@@ -12,12 +12,6 @@
     "revision": "android-9.0"
   },
   {
-    "remote": "omnirom",
-    "repository": "android_device_qcom_sepolicy",
-    "target_path": "device/qcom/sepolicy",
-    "revision": "android-9.0"
-  },
-  {
     "remote": "CalebQ42",
     "repository": "android_kernel_razer_sdm845",
     "target_path": "kernel/razer/sdm845"

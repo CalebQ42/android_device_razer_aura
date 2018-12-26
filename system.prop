@@ -4,3 +4,5 @@ sys.usb.controller=a600000.dwc3
 ro.hardware.keystore=sdm845
 ro.hardware.gatekeeper=sdm845
 ro.hardware.bootctrl=sdm845
+ro.board.platform=sdm845
+ro.product.board=sdm845

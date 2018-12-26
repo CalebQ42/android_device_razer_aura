@@ -20,7 +20,17 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 #Other Things
 BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 BOARD_USES_VENDORIMAGE := true
-#BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := true
+TW_USE_TOOLBOX := true
+
+TARGET_SYSTEM_PROP := $(DEVICE_TREE)/system.prop
+
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+
+
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := device/razer/aura/installer
 
 # Architecture
 TARGET_ARCH := arm64
@@ -42,12 +52,12 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := cheryl2-perf_defconfig
 
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image.gz-dtb
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 # Boot image
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 buildvariant=user
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -65,7 +75,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # A/B device flags
-TARGET_NO_RECOVERY := true
+#TARGET_NO_RECOVERY := true
 #BOARD_USES_RECOVERY_AS_BOOT := true
 #BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_UPDATER := true

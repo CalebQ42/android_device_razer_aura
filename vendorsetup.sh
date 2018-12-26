@@ -1,1 +1,3 @@
 add_lunch_combo omni_aura-eng
+add_lunch_combo omni_aura-user
+add_lunch_combo omni_aura-userdebug
