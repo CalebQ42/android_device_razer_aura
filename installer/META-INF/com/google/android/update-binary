@@ -43,8 +43,8 @@ extract() {
 }
 
 print "#########################################"
-print "#     TWRP installer for OnePlus 6T     #"
-print "#             by mauronofrio            #"
+print "#    TWRP installer for Razer Phone 2   #"
+print "#      by mauronofrio (and CalebQ42)    #"
 print "#########################################"
 
 # Unpack the installer

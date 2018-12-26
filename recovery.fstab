@@ -29,42 +29,15 @@
 
 #device         mount point      fstype        [device2] [length=]
 
-/dev/block/bootdevice/by-name/system       /               ext4    ro,barrier=1                                                    wait,slotselect,avb
-/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nodiratime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=footer
-/dev/block/mmcblk0p1                       /sdcard         vfat    nosuid,nodev                                                    wait
-/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        wait,slotselect
-/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
-
-#LUN0
-/dev/block/bootdevice/by-name/persist      /persist        ext4   defaults                                                         defaults
-
-#LUN1, LIN2
-/dev/block/bootdevice/by-name/xbl          /xbl            emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/xbl_config   /xbl_config     emmc   defaults                                                         wait,slotselect
-
-#LUN4
-/dev/block/bootdevice/by-name/aop          /aop            emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/tz           /tz             emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/hyp          /hyp            emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/modem        /modem          vfat   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/abl          /abl            emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/dsp          /dsp            emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/keymaster    /keymaster      emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/cmnlib       /cmnlib         emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/cmnlib64     /cmnlib64       emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/devcfg       /devcfg         emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/qupfw        /qupfw          emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/storsec      /storsec        emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/ImageFv      /ImageFv        emmc   defaults                                                         defaults
-/dev/block/bootdevice/by-name/vbmeta       /vbmeta         emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/dtbo         /dtbo           emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/splash       /splash         emmc   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/logfs        /logfs          vfat   defaults                                                         wait
-/dev/block/bootdevice/by-name/bluetooth    /bt_firmware    vfat   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/nvdef        /nvdef          emmc   defaults                                                         wait,slotselect
-#/dev/block/bootdevice/by-name/hidden       /hidden         ext4   defaults                                                         wait,slotselect
-#/dev/block/bootdevice/by-name/cda          /hidden/data    ext4   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/systeminfo   /systeminfo     ext4   defaults                                                         wait,slotselect
-/dev/block/bootdevice/by-name/sutinfo      /sutinfo        emmc   defaults                                                         defaults
-#/dev/block/bootdevice/by-name/elabel       /elabel         ext4   defaults                                                         defaults
-/dev/block/bootdevice/by-name/vendor       /vendor         ext4   defaults                                                         wait,slotselect
+/boot		emmc	/dev/block/bootdevice/by-name/boot	flags=slotselect
+/system		ext4	/dev/block/bootdevice/by-name/system	flags=slotselect
+/system_image	emmc	/dev/block/bootdevice/by-name/system	flags=slotselect
+/vendor		ext4	/dev/block/bootdevice/by-name/vendor	flags=slotselect;display="Vendor";backup=1
+/vendor_image	emmc	/dev/block/bootdevice/by-name/vendor	flags=slotselect
+/data		ext4	/dev/block/bootdevice/by-name/userdata
+/misc		emmc	/dev/block/bootdevice/by-name/misc
+/efs1		emmc	/dev/block/bootdevice/by-name/modemst1	flags=backup=1;display="EFS"
+/efs2		emmc	/dev/block/bootdevice/by-name/modemst2	flags=backup=1;subpartitionof=/efs1
+/efsg		emmc	/dev/block/bootdevice/by-name/fsg	flags=backup=1;subpartitionof=/efs1
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sdg1 /dev/block/sdg		flags=display="USB-OTG";storage;wipeingui;removable

@@ -2,7 +2,7 @@ DEVICE_TREE := device/razer/aura
 
 RECOVERY_VARIANT := twrp
 
-ALLOW_MISSING_DEPENDENCIES = true
+#ALLOW_MISSING_DEPENDENCIES = true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -30,7 +30,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/razer/aura/installer
+RECOVERY_INSTALLER_PATH := $(DEVICE_TREE)/installer
 
 # Architecture
 TARGET_ARCH := arm64
@@ -47,7 +47,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := kryo
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/razer/sdm845
+#TARGET_KERNEL_SOURCE := kernel/razer/sdm845
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := cheryl2-perf_defconfig
@@ -57,14 +57,14 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image.gz-dtb
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 # Boot image
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x0004000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE     := 0x0004000000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x0004000000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x0100000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0BAC1D7000
 BOARD_FLASH_BLOCK_SIZE := 0x40000
@@ -81,6 +81,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 AB_OTA_UPDATER := true
 
 # TWRP specific build flags
+
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
+TW_NO_SCREEN_BLANK := true
+
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -96,7 +100,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 BOARD_SUPPRESS_SECURE_ERASE := true
 # Stock kernel sometimes crashes when we toggle MTP
-TW_EXCLUDE_MTP := true
+#TW_EXCLUDE_MTP := true
 
 # We can use the factory reset button combo to enter recovery safely
 TW_IGNORE_MISC_WIPE_DATA := true
