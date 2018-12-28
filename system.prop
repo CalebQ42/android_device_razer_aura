@@ -1,8 +1,5 @@
-ro.sf.lcd_density=480
-ro.razer.lcd_default_brightness=158
-sys.usb.controller=a600000.dwc3
-ro.hardware.keystore=sdm845
-ro.hardware.gatekeeper=sdm845
-ro.hardware.bootctrl=sdm845
-ro.board.platform=sdm845
+ro.display.series=Phone 2
 ro.product.board=sdm845
+ro.board.platform=sdm845
+ro.build.version.release=9
+ro.build.version.security_patch=2025-12-31

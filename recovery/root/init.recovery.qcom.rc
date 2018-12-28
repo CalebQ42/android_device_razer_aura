@@ -118,6 +118,7 @@ on init
     start boot-1-0
     start prepdecrypt
     start time_daemon
+    write /sys/class/backlight/panel0-backlight/brightness 200
     #setprop crypto.ready 1
 
 on property:crypto.ready=0
