@@ -1,1 +1,1 @@
-# android_device_razer_aura
+# android_device_razer_cheryl2
